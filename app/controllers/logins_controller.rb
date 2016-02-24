@@ -5,3 +5,11 @@
 # and deleted (i.e. 'logging out').
 # 
 # Reading and Updating a login, however, make a little less sense.
+
+MyApp.get "/logins/new" do
+  
+end
+
+MyApp.post "/logins/create" do
+
+end
