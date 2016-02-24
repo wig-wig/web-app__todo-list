@@ -11,3 +11,8 @@ MyApp.post "/new_user/create" do
   @user.save
   erb :"users/user_success"
 end
+
+MyApp.get "/users_view" do
+  @users = User.all
+  erb :"users/users_view"
+end
