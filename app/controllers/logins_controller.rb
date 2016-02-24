@@ -25,9 +25,8 @@ MyApp.post "/logins/create" do
 end
 
 #deletes users session
-MyApp.get "/logins_delete/:id" do
-  binding.pry
-  session["user_id"] == nil
+MyApp.get "/logins/delete" do
+  session["user_id"] = nil
   erb :"logins/success_logout"
 end
 
