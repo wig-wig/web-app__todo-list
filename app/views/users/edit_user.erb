@@ -1,0 +1,22 @@
+<h1>Edit user info</h1>
+
+<form action="/edit_user/<%= @user.id %>" method="post" >
+    <p>
+      Name:
+      <input type="text" name="name" value="<%= @user.name%>">
+    </p>
+
+    <p>
+      Email:
+      <input type="text" name="email" value="<% @user.email %>">
+    </p>
+
+    <p>
+      Password:
+      <input type="text" name="password" value="<%= @user.password %>">
+    </p>
+
+    <p>
+      <input type="submit">
+    </p>
+</form>

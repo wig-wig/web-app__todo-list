@@ -20,8 +20,16 @@ MyApp.get "/users_view" do
   erb :"users/users_view"
 end
 
+#form to edit users info
+MyApp.get "/edit_user_form/:id" do
+  @user = User.find_by_id(params[:id])
+  binding.pry
+  erb :"users/edit_user"
+end
+
+
 #edits user
-MyApp.get "/edit_user/:id" do
+MyApp.post "/edit_user/:id" do
   @user = User.find_by_id(params[:id])
   @user.name = params["name"]
   @user.email = params["email"]
