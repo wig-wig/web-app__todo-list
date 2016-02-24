@@ -8,7 +8,11 @@
 <body>
 
   <% @users.each do |users| %>
-    <%= users.name %> - <%= users.email %> - <%= users.password %>
+    <%= users.name %>
+    <%= users.email %>
+    <%= users.password %>
+    <a href="/edit_user/<%= info.id %>">Edit</a>
+    <a href="/delete_user/<%= users.id %>">Delete</a>
   <% end %>
 </body>
 </html>
