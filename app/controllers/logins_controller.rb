@@ -23,3 +23,14 @@ MyApp.post "/logins/create" do
     erb :"logins/invalid"
   end
 end
+
+#deletes user session
+MyApp.post "/logins/delete" do
+  session["user_id"] = nil
+    erb :"logins/success_logout"
+end
+
+
+
+
+

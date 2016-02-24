@@ -1,6 +1,6 @@
 # This controller is for all the CRUD operations related to a User.
 #new user form
-MyApp.get "/new_user" do 
+MyApp.get "/" do 
   erb :"users/new_user"
 end
 
