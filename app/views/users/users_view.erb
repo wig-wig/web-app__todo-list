@@ -1,11 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>My Application</title>
-</head>
+<h1>Users</h1>
 
-<body>
+
 
   <% @users.each do |users| %>
     <%= users.name %>
@@ -14,5 +9,3 @@
     <a href="/edit_user/<%= info.id %>">Edit</a>
     <a href="/delete_user/<%= users.id %>">Delete</a>
   <% end %>
-</body>
-</html>
