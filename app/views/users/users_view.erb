@@ -1,11 +1,17 @@
 <h1>Users</h1>
-
-
-
-  <% @users.each do |users| %>
-    <%= users.name %>
-    <%= users.email %>
-    <%= users.password %>
-    <a href="/edit_user_form/<%= users.id %>">Edit</a>
-    <a href="/delete_user/<%= users.id %>">Delete</a>
-  <% end %>
+  
+<% @users.each do |users| %>
+  
+  <p>
+  Name:
+  <%= users.name %><br>
+  Email:
+  <%= users.email %><br>
+  Password:
+  <%= users.password %><br>
+  <a href="/edit_user_form/<%= users.id %>">Edit</a>
+  <a href="/delete_user/<%= users.id %>">Delete</a>
+  <a href="/logins_delete/<%=users.id %>">Log out</a>
+  </p>
+<% end %>
+        

@@ -16,7 +16,7 @@ end
 MyApp.post "/logins/create" do
   @user = User.find_by_email(params["email"])
 
-  if @user.password == params["password"]
+  if @user.password == params["password"] 
     session["user_id"] = @user.id
     erb :"logins/success"
   else
@@ -24,9 +24,10 @@ MyApp.post "/logins/create" do
   end
 end
 
-#deletes user session
-MyApp.post "/logins/delete" do
-  session["user_id"] = nil
+#deletes users session
+MyApp.get "/logins_delete/:id" do
+  binding.pry
+  session["user_id"] == nil
   erb :"logins/success_logout"
 end
 
