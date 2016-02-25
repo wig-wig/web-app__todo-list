@@ -7,10 +7,8 @@ class Todo < ActiveRecord::Base
   end
 
   def category_name
-    binding.pry
     x = category_id
     y = Category.find_by_id(x)
-    binding.pry
     y.name
   end
 end
