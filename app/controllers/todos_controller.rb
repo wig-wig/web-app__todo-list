@@ -13,7 +13,8 @@ MyApp.post "/todos/create" do
   @todo.description = params["description"]
   @todo.completed = params["completed"]
   @todo.user_id  = params["user_id"]
-  @todo.todo_creator = #params["user_id"]
+  @todo.todo_creator = session["user_id"]
+  binding.pry
   @todo.save
   erb :"todos/success"
 end

@@ -13,6 +13,7 @@
   <%= todos.completed %><br>
   User:
   <%= todos.users_name %><br>
+  Created by <%= todos.creator %>
   <a href="/edit_todos/<%= todos.id %>">Edit</a>
   <a href="/delete_todos/<%= todos.id %>">Delete</a>
   </p>

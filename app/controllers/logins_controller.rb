@@ -9,7 +9,6 @@
 
 #shows login form
 MyApp.get "/logins/new" do
-  
   erb :"logins/new"
 end
 
