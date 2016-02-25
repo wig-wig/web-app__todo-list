@@ -13,10 +13,8 @@ class Todo < ActiveRecord::Base
   end
 
   def creator
-    binding.pry
     x = todo_creator
     y = User.find_by_id(x)
-    binding.pry
     y.name
   end
 end
