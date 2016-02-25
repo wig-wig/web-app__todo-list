@@ -8,7 +8,7 @@ end
 #Creates new user
 MyApp.post "/todos/create" do
   @todo = Todo.new
-  @todo.title = params["category"]
+  @todo.category_id = params["category_id"]
   @todo.title = params["title"]
   @todo.description = params["description"]
   @todo.completed = params["completed"]

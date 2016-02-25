@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "todos", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "category"
+    t.integer  "category_id"
     t.string   "title"
     t.text     "description"
     t.boolean  "completed"
