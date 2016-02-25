@@ -21,7 +21,6 @@ MyApp.post "/logins/create" do
     erb :"users/new_user"
   elsif @user.password == params["password"] 
     session["user_id"] = @user.id
-    binding.pry
     redirect "/todos"
   else
     erb :"logins/invalid"

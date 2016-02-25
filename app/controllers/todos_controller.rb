@@ -25,7 +25,8 @@ end
 #gets To Do edit form
 MyApp.get "/edit_todos/:id" do
   @current_user = User.find_by_id(session["user_id"]) 
-  if @current_user != nil
+
+    if @current_user.id != nil
       @todos = Todo.find_by_id(params[:id])
     else
       erb :"todos/invalid_request"

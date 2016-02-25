@@ -11,7 +11,7 @@ MyApp.post "/new_user/create" do
   @user.email = params["email"]
   @user.password = params["password"]
   @user.save
-  erb :"users/user_success"
+  redirect "/logins/new"
 end
 
 #creates view of all users
