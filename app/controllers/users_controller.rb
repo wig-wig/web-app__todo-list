@@ -23,7 +23,6 @@ end
 #form to edit users info
 MyApp.get "/edit_user_form/:id" do
   @user = User.find_by_id(params[:id])
-  binding.pry
   erb :"users/edit_user"
 end
 

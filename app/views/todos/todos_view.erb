@@ -1,0 +1,17 @@
+<h1>To-Dos</h1>
+  
+<% @todos.each do |todos| %>
+  
+  <p>
+  Title:
+  <%= todos.title %><br>
+  Description:
+  <%= todos.description %><br>
+  Completed:
+  <%= todos.completed %><br>
+  User:
+  <%= todos.user_id %><br>
+  <a href="/edit_todos/<%= todos.id %>">Edit</a>
+  <a href="/delete_todos/<%= todos.id %>">Delete</a>
+  </p>
+<% end %>

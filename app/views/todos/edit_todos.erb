@@ -1,0 +1,27 @@
+<h1>Edit To-Dos</h1>
+
+<form action="/edit_todos_form/<%= @todos.id %>" method="post" >
+    <p>
+      Name:
+      <input type="text" name="title" value="<%= @todos.title %>">
+    </p>
+
+    <p>
+      Description:
+      <input type="text" name="description" value="<%= @todos.description %>">
+    </p>
+
+    <p>
+      Completed:
+      <input type="text" name="completed" value="<%= @todos.completed %>">
+    </p>
+
+    <p>
+      User_id:
+      <input type="number" name="user_id" value="<%= @todos.user_id %>">
+    </p>
+
+    <p>
+      <input type="submit">
+    </p>
+</form>
