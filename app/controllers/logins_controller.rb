@@ -9,6 +9,7 @@
 
 #shows login form
 MyApp.get "/logins/new" do
+  
   erb :"logins/new"
 end
 
@@ -16,9 +17,12 @@ end
 MyApp.post "/logins/create" do
   @user = User.find_by_email(params["email"])
 
-  if @user.password == params["password"] 
+  if @user == nil
+    erb :"users/new_user"
+  elsif @user.password == params["password"] 
     session["user_id"] = @user.id
-    erb :"logins/success"
+    binding.pry
+    redirect "/todos"
   else
     erb :"logins/invalid"
   end
