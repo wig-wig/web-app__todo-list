@@ -17,4 +17,6 @@ class Todo < ActiveRecord::Base
     y = User.find_by_id(x)
     y.name
   end
+
+
 end

@@ -1,7 +1,8 @@
 # This controller is for all the CRUD operations related to a Todo.
 
 #Form for a new user
-MyApp.get "/todos/new" do 
+MyApp.get "/todos/new" do
+  @users = User.all 
   erb :"todos/new"
 end
 
@@ -22,9 +23,6 @@ end
 #Gets all To Dos
 MyApp.get "/todos" do
   @todos = Todo.all
-  @todos.sort
-
-  binding.pry
   erb :"todos/todos_view"
 end
 

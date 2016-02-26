@@ -22,10 +22,12 @@
     <input type="boolean" name="completed">
   </p>
 
+  <% @users.each do |users| %>
   <p>
-    User_id:
-    <input type="number" name="user_id">
+    Assign to:
+    <input type="checkbox" name="user_id[]" value="<%= users.id %>"><%= users.id %>
   </p>
+  <% end %>
 
   <p>
   <input type="submit">
