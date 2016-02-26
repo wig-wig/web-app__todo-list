@@ -18,10 +18,16 @@ class Todo < ActiveRecord::Base
     y.name
   end
 
-  def users_access
-    x = user.id
-    y = User.find_by_id(x)
-    return y
+  def assign_todo(user_id)
+    user_id.each do |assign|
+      assign = Todo.new
+      assign.category_id = category_id
+      assign.title = title
+      assign.description = description
+      assign.completed = completed
+      assign.user_id = user_id
+      assign.save
+    end
   end
 
 end

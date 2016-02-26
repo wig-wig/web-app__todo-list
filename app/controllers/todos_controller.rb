@@ -3,7 +3,6 @@
 #Form for a new user
 MyApp.get "/todos/new" do
   @users = User.all
-  binding.pry 
   erb :"todos/new"
 end
 
@@ -16,8 +15,8 @@ MyApp.post "/todos/create" do
   @todo.completed = params["completed"]
   @todo.user_id  = params["user_id"]
   @todo.todo_creator = session["user_id"]
-  binding.pry
   @todo.save
+  @todo.assign_todo(params["user_id"])
   erb :"todos/success"
 end
 
@@ -40,12 +39,14 @@ end
 
 #Processes edit form
 MyApp.post "/edit_todos_form/:id" do
+  binding.pry
   @todo = Todo.find_by_id(params[:id])
   @todo.title = params["title"]
   @todo.description = params["description"]
   @todo.completed = params["completed"]
   @todo.user_id  = params["user_id"]
   @todo.save
+  @todo.assign_todo(params["user_id"])
   erb :"todos/edit_success"
 end
 
