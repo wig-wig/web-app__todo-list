@@ -22,6 +22,9 @@ end
 #Gets all To Dos
 MyApp.get "/todos" do
   @todos = Todo.all
+  @todos.sort
+
+  binding.pry
   erb :"todos/todos_view"
 end
 
