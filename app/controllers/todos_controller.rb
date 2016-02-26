@@ -2,7 +2,8 @@
 
 #Form for a new user
 MyApp.get "/todos/new" do
-  @users = User.all 
+  @users = User.all
+  binding.pry 
   erb :"todos/new"
 end
 

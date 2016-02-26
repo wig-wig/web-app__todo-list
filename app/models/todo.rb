@@ -18,5 +18,10 @@ class Todo < ActiveRecord::Base
     y.name
   end
 
+  def users_access
+    x = user.id
+    y = User.find_by_id(x)
+    return y
+  end
 
 end
