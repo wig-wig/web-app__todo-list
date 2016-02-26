@@ -20,8 +20,8 @@ class Todo < ActiveRecord::Base
 
   def assign_todo(user_id)
     user_id.each do |assign|
-      assign = Todo.new
-     
+      assign.user_id = user_id
+    end
   end
 
 end

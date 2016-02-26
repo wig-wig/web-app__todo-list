@@ -8,14 +8,15 @@ end
 
 #Creates new user
 MyApp.post "/todos/create" do
+  binding.pry
   @todo = Todo.new
   @todo.category_id = params["category_id"]
   @todo.title = params["title"]
   @todo.description = params["description"]
   @todo.completed = params["completed"]
-  @todo.user_id  = params["user_id"]
   @todo.todo_creator = session["user_id"]
   @todo.save
+  binding.pry
   @todo.assign_todo(params["user_id"])
   erb :"todos/success"
 end
