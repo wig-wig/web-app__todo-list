@@ -21,13 +21,7 @@ class Todo < ActiveRecord::Base
   def assign_todo(user_id)
     user_id.each do |assign|
       assign = Todo.new
-      assign.category_id = category_id
-      assign.title = title
-      assign.description = description
-      assign.completed = completed
-      assign.user_id = user_id
-      assign.save
-    end
+     
   end
 
 end
